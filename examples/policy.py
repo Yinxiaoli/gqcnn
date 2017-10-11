@@ -178,3 +178,12 @@ if __name__ == '__main__':
         vis.grasp(action.grasp, scale=1.5, show_center=False, show_axis=True)
         vis.title('Planned grasp on depth (Q=%.3f)' %(action.q_value))
         vis.show()
+        print 'grasp center=', action.grasp.center
+        print 'grasp depth=', action.grasp.depth
+
+        file = open('grasp.txt', 'w')
+        file.write('%.2f %.2f\n' % (action.grasp.center.x, action.grasp.center.y))
+        file.write('%.2f\n' % action.grasp.depth)
+        file.write('%.2f\n' % action.grasp.angle)
+        file.write('%.2f\n' % action.grasp.width)
+        file.close()
