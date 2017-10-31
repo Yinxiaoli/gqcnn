@@ -99,6 +99,7 @@ import numpy as np
 import os
 import sys
 import time
+import matplotlib.pyplot as plt
 
 from autolab_core import RigidTransform, YamlConfig
 from perception import RgbdImage, RgbdSensorFactory
@@ -192,3 +193,7 @@ if __name__ == '__main__':
         file.write('%.3f\n' % action.grasp.angle)
         file.write('%.3f\n' % (action.grasp.width * 1000))
         file.close()
+
+        # Comment out the following line if you don't want to save image.
+        plt.imsave('color_registered.png', rgbd_im.color.data)
+        plt.imsave('depth_registered.png', rgbd_im.depth.data)
