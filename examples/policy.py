@@ -180,14 +180,15 @@ if __name__ == '__main__':
         vis.show()
 
         print '*********************************************************'
-        print 'grasp center=', action.grasp.center
-        print 'grasp depth=', action.grasp.depth
+        print 'grasp center= ', action.grasp.center
+        print 'grasp depth= %.3f mm' % (action.grasp.depth * 1000)
         print 'grasp angle=', action.grasp.angle
-        print 'grasp width=', action.grasp.width
+        print 'grasp width= %.3f mm' % (action.grasp.width * 1000)
 
         file = open('grasp.txt', 'w')
-        file.write('%.2f %.2f\n' % (action.grasp.center.x, action.grasp.center.y))
-        file.write('%.2f\n' % action.grasp.depth)
-        file.write('%.2f\n' % action.grasp.angle)
-        file.write('%.2f\n' % action.grasp.width)
+        file.write('%.3f\n' % action.grasp.center.x)
+        file.write('%.3f\n' % action.grasp.center.y)
+        file.write('%.3f\n' % action.grasp.depth * 1000)
+        file.write('%.3f\n' % action.grasp.angle)
+        file.write('%.3f\n' % action.grasp.width * 1000)
         file.close()
