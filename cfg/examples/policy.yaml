@@ -2,7 +2,7 @@
 sensor:
   image_dir: data/rgbd/multiple_objects
   type: kinect2
-  frame: primesense_overhead
+  frame: kinect_2_overhead
   pipeline_mode: 1
   device_num: 0
 
@@ -23,7 +23,7 @@ policy:
 
   # general params
   deterministic: 1
-  gripper_width: 0.05
+  gripper_width: 0.08
   crop_height: 96
   crop_width: 96
 
