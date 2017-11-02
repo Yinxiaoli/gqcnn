@@ -187,11 +187,7 @@ if __name__ == '__main__':
         print 'grasp width= %.3f mm' % (action.grasp.width * 1000)
 
         file = open('grasp.txt', 'w')
-        file.write('%.3f\n' % action.grasp.center.x)
-        file.write('%.3f\n' % action.grasp.center.y)
-        file.write('%.3f\n' % (action.grasp.depth * 1000))
-        file.write('%.3f\n' % action.grasp.angle)
-        file.write('%.3f\n' % (action.grasp.width * 1000))
+        file.write('%.3f,%.3f,%.3f,%.3f,%.3f\n' % (action.grasp.center.x, action.grasp.center.y, (action.grasp.depth * 1000), action.grasp.angle, (action.grasp.width * 1000)))
         file.close()
 
         # Comment out the following line if you don't want to save image.
