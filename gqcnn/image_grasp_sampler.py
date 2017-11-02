@@ -374,7 +374,7 @@ class AntipodalDepthImageGraspSampler(ImageGraspSampler):
                         for i in range(self._depth_samples_per_grasp):
                             # get depth in the neighborhood of the center pixel
                             depth_win = depth_im.data[grasp_center[0]-self._h:grasp_center[0]+self._h, grasp_center[1]-self._w:grasp_center[1]+self._w]
-                            center_depth = np.min(depth_win)
+                            center_depth = np.average(depth_win)
                             if center_depth == 0 or np.isnan(center_depth):
                                 continue
 
